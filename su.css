@@ -1,0 +1,220 @@
+:root {
+    --bg: #f9fbfd;
+    --text: #2b2b35;
+    --accent: #3366ff;
+    --accent-dark: #2244cc;
+    --muted: #6c6c80;
+    --card-bg: #ffffff;
+    --border: #e4e8ef;
+    --shadow-light: rgba(0, 0, 0, 0.04);
+    --highlight-bg: #f0f6ff;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", "Georgia", serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--accent-dark);
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: var(--accent);
+    color: #fff;
+    position: relative;
+}
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: #fff;
+    opacity: 0.9;
+    border-radius: 3px;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-family: "Georgia", serif;
+    letter-spacing: 0.3px;
+}
+header p.meta {
+    margin-top: 12px;
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+nav.breadcrumb {
+    margin: 20px auto 0;
+    max-width: 1500px;
+    padding: 0 5%;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+nav.breadcrumb a {
+    color: var(--muted);
+}
+nav.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 50px auto 60px;
+    background: var(--card-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px var(--shadow-light);
+    border: 1px solid var(--border);
+    padding-bottom: 60px;
+}
+
+figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+figure img {
+    width: 100%;
+    display: block;
+    transition: transform 4s ease, filter 0.6s ease;
+    filter: brightness(0.98);
+}
+figure:hover img {
+    transform: scale(1.04);
+    filter: brightness(1);
+}
+
+main {
+    padding: 50px 8%;
+}
+main h2 {
+    font-size: 1.9rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--accent-dark);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 6px;
+}
+main p {
+    margin-bottom: 1.8rem;
+    font-size: 1.15rem;
+    text-indent: 1.8em;
+    transition: color 0.3s ease;
+}
+main p:hover {
+    color: var(--accent-dark);
+}
+
+blockquote {
+    margin: 35px 0;
+    padding: 20px 28px;
+    border-left: 5px solid var(--accent);
+    background: var(--highlight-bg);
+    color: var(--accent-dark);
+    font-style: italic;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px var(--shadow-light);
+}
+
+aside.callout {
+    margin: 30px 0;
+    padding: 20px 30px;
+    background: var(--accent-dark);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+aside.callout a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+ul.styled-list {
+    margin: 1.8rem 0;
+    padding-left: 2.5em;
+}
+ul.styled-list li {
+    margin-bottom: 0.7rem;
+    position: relative;
+}
+ul.styled-list li::before {
+    content: "•";
+    position: absolute;
+    left: -1.5em;
+    color: var(--accent);
+    font-size: 1.2rem;
+    top: 0;
+}
+
+table.data {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+table.data th, table.data td {
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+}
+table.data th {
+    background: var(--highlight-bg);
+    color: var(--accent-dark);
+    text-align: left;
+}
+table.data tr:nth-child(even) {
+    background: #fafbfc;
+}
+
+footer {
+    padding: 30px 20px;
+    background: #eef2f8;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+footer a {
+    color: var(--accent-dark);
+    font-weight: 500;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+    .container {
+        width: 94%;
+    }
+    main {
+        padding: 40px 5%;
+    }
+}
+@media (max-width: 700px) {
+    main {
+        padding: 25px 20px 0;
+    }
+    header {
+        padding: 50px 15px 30px;
+    }
+}
